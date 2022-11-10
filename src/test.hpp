@@ -28,7 +28,6 @@
         std::cerr << std::setw(std::strlen(error) + 8) << std::setfill('-') << "" << std::endl;\
     }\
 }
-
 #define CHRONO_TEST(func, message)\
 {\
     std::chrono::time_point<std::chrono::system_clock> start, end;\
