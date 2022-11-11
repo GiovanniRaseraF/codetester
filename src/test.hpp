@@ -52,11 +52,11 @@ std::ostream &operator<<(std::ostream& os, std::vector<T> &&vec){
 {\
     std::cout << std::setw(std::strlen(message) + 9) << std::setfill('-') << "" << std::endl;std::cout << std::setfill(' ');\
     std::cout << "CHRONING: " << message << std::endl;\
-    std::chrono::time_point<std::chrono::system_clock> start, end;\
-    start = std::chrono::system_clock::now();\
+    const auto start = std::chrono::high_resolution_clock::now();\
     func;\
-    end = std::chrono::system_clock::now();\
-    std::cout << std::setw(15) << std::left << " -Duration: " << std::chrono::duration_cast<std::chrono::microseconds>(end-start).count() << "ms" << std::endl;\
+    const auto end = std::chrono::high_resolution_clock::now();\
+    const std::chrono::duration<double, std::milli> ms = end-start;\
+    std::cout << std::setw(15) << std::left << " -Duration: " << ms.count() << "ms" << std::endl;\
     std::cout << std::setw(std::strlen(message) + 9) << std::setfill('-') << "" << std::endl;std::cout << std::setfill(' ');\
 }
 
