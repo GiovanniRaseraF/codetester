@@ -11,6 +11,26 @@
 #include <string>
 #include <chrono>
 
+#ifdef VEC_PRINT
+template <class T>
+std::ostream &operator<<(std::ostream& os, std::vector<T> &vec){
+    for(T val : vec){
+        os << std::setw(4) << val;
+    }
+
+    return os;
+}
+
+template <class T>
+std::ostream &operator<<(std::ostream& os, std::vector<T> &&vec){
+    for(T val : vec){
+        os << std::setw(4) << val;
+    }
+
+    return os;
+}
+#endif
+
 #define TEST(func, expected, error)\
 {\
     if(func != expected){\
