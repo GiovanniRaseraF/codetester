@@ -11,6 +11,11 @@ int main(){
 }
 ```
 
+```cpp
+#define VEC_PRINT
+#include "test.hpp"
+// To print std::vector<T> 
+```
 ## TODO
 - Implementing CHRONO_TEST, to get timings
 - Implement AVG_CHRONO_TEST, multiple execution of the same function to calculate avg
