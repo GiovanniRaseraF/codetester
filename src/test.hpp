@@ -50,14 +50,14 @@ std::ostream &operator<<(std::ostream& os, std::vector<T> &&vec){
 }
 #define CHRONO_TEST(func, message)\
 {\
-    std::cout << std::setw(std::strlen(message) + 9) << std::setfill('-') << "" << std::endl;std::cout << std::setfill(' ');\
+    std::cout << std::setw(std::strlen(message) + 10) << std::setfill('-') << "" << std::endl;std::cout << std::setfill(' ');\
     std::cout << "CHRONING: " << message << std::endl;\
     const auto start = std::chrono::high_resolution_clock::now();\
     func;\
     const auto end = std::chrono::high_resolution_clock::now();\
     const std::chrono::duration<double, std::milli> ms = end-start;\
     std::cout << std::setw(15) << std::left << " -Duration: " << ms.count() << "ms" << std::endl;\
-    std::cout << std::setw(std::strlen(message) + 9) << std::setfill('-') << "" << std::endl;std::cout << std::setfill(' ');\
+    std::cout << std::setw(std::strlen(message) + 10) << std::setfill('-') << "" << std::endl;std::cout << std::setfill(' ');\
 }
 
 #ifdef DEB
